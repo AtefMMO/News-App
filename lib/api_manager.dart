@@ -6,12 +6,13 @@ import 'package:news_project/model/NewsResponse.dart';
 import 'package:news_project/model/SourceResponse.dart';
 
 class ApiManager {
-  static Future<SourceResponse> getSource()async {
+  static Future<SourceResponse> getSource(String category)async {
     /*
      https://newsapi.org/v2/top-headlines/sources?apiKey=9b4f72c465d74e978fd5434f9d752721
      */
     Uri url = Uri.https(ApiConstants.baseUrl, ApiConstants.sourceApi,
-        {'apiKey': '9b4f72c465d74e978fd5434f9d752721'});
+        {'apiKey': '9b4f72c465d74e978fd5434f9d752721',
+        'category':category});
     try {
 //authority is the server name
       //unecode api name
