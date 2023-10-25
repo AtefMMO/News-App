@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_project/category/category_details.dart';
 import 'package:news_project/home/home_screen.dart';
+import 'package:news_project/news/news_details_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         HomeScreen.RouteName: (context) => HomeScreen(),
+        NewsDetailsScreen.routeName: (context) => NewsDetailsScreen(),
       },
       initialRoute: HomeScreen.RouteName,
     );
