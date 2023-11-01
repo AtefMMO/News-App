@@ -10,14 +10,11 @@ class CategoryDetails extends StatefulWidget {
   @override
   State<CategoryDetails> createState() => _CategoryDetailsState();
   Categories categories;
-  CategoryDetails({
-    required this.categories
-  });
-
+  CategoryDetails({required this.categories});
 }
 
 class _CategoryDetailsState extends State<CategoryDetails> {
-
+  TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<SourceResponse>(
@@ -57,6 +54,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
             );
           }
           var sourceList = snapshot.data?.sources ?? [];
+
           return TabContainer(sourceList: sourceList);
         },
         future: ApiManager.getSource(widget.categories.id!));

@@ -6,13 +6,12 @@ import 'package:news_project/model/NewsResponse.dart';
 import 'package:news_project/model/SourceResponse.dart';
 
 class ApiManager {
-  static Future<SourceResponse> getSource(String category)async {
+  static Future<SourceResponse> getSource(String category) async {
     /*
      https://newsapi.org/v2/top-headlines/sources?apiKey=9b4f72c465d74e978fd5434f9d752721
      */
     Uri url = Uri.https(ApiConstants.baseUrl, ApiConstants.sourceApi,
-        {'apiKey': '9b4f72c465d74e978fd5434f9d752721',
-        'category':category});
+        {'apiKey': '9b4f72c465d74e978fd5434f9d752721', 'category': category});
     try {
 //authority is the server name
       //unecode api name
@@ -22,27 +21,46 @@ class ApiManager {
       var json = jsonDecode(bodyString); //json
       return SourceResponse.fromJson(
           json); //sent to source response to give us object from the response to use it everywhere
-    }catch(e){
+    } catch (e) {
       print(e);
       throw e;
     }
   }
-  static Future<NewsResponse> getNewsBySourceId(String sourceId)async{
+
+  static Future<NewsResponse> getNewsBySourceId(String sourceId) async {
     /*
      https://newsapi.org/v2/everything?apiKey=9b4f72c465d74e978fd5434f9d752721
      */
-    Uri url =Uri.https(ApiConstants.baseUrl,ApiConstants.newsApi,{
-    'apiKey':'9b4f72c465d74e978fd5434f9d752721',
-      'sources':sourceId
+    Uri url = Uri.https(ApiConstants.baseUrl, ApiConstants.newsApi, {
+      'apiKey': '9b4f72c465d74e978fd5434f9d752721',
+      'sources': sourceId,
     });
-    try{
-    var response=await http.get(url);
-    var bodyString=response.body;
-    var json=jsonDecode(bodyString);
-    return NewsResponse.fromJson(json);}
-        catch(e){
+    try {
+      var response = await http.get(url);
+      var bodyString = response.body;
+      var json = jsonDecode(bodyString);
+      return NewsResponse.fromJson(json);
+    } catch (e) {
       print(e);
       throw e;
-        }
+    }
+  }
+  static Future<NewsResponse> getNewsByQuery(String q) async {
+    /*
+     https://newsapi.org/v2/everything?apiKey=9b4f72c465d74e978fd5434f9d752721
+     */
+    Uri url = Uri.https(ApiConstants.baseUrl, ApiConstants.newsApi, {
+      'apiKey': '9b4f72c465d74e978fd5434f9d752721',
+      'q':q
+    });
+    try {
+      var response = await http.get(url);
+      var bodyString = response.body;
+      var json = jsonDecode(bodyString);
+      return NewsResponse.fromJson(json);
+    } catch (e) {
+      print(e);
+      throw e;
+    }
   }
 }

@@ -13,7 +13,7 @@ class TabContainer extends StatefulWidget {
 }
 
 class _TabContainerState extends State<TabContainer> {
-  int selectedIndex=0;
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -22,20 +22,22 @@ class _TabContainerState extends State<TabContainer> {
         child: Column(
           children: [
             TabBar(
-              isScrollable: true,onTap: (index) {
-                selectedIndex=index;
-                setState(() {
-
-                });
-            } ,
+              isScrollable: true,
+              onTap: (index) {
+                selectedIndex = index;
+                setState(() {});
+              },
               indicatorColor: Colors.transparent,
               tabs: widget.sourceList
-                  .map((source) => TabItem(isSelected: selectedIndex==widget.sourceList.indexOf(source) , source: source))
+                  .map((source) => TabItem(
+                      isSelected:
+                          selectedIndex == widget.sourceList.indexOf(source),
+                      source: source))
                   .toList(),
             ),
-        Expanded(child: NewsContainer(source: widget.sourceList[selectedIndex]))
+            Expanded(
+                child: NewsContainer(source: widget.sourceList[selectedIndex]))
           ],
-        )
-    );
+        ));
   }
 }
