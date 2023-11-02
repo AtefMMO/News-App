@@ -3,7 +3,7 @@ import 'package:news_project/api_manager.dart';
 import 'package:news_project/category/category.dart';
 import 'package:news_project/model/SourceResponse.dart';
 import 'package:news_project/news/news_container.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:news_project/tabs/tab_container.dart';
 
 class CategoryDetails extends StatefulWidget {
@@ -31,13 +31,13 @@ class _CategoryDetailsState extends State<CategoryDetails> {
           } else if (snapshot.hasError) {
             return Column(
               children: [
-                Text('Error'),
+                Text(''),
                 ElevatedButton(
                     onPressed: () {
                       ApiManager.getSource(widget.categories.id!);
                       setState(() {});
                     },
-                    child: Text('Try Again'))
+                    child: Text(AppLocalizations.of(context)!.error))
               ],
             );
           } else if (snapshot.data?.status != 'ok') {
@@ -49,7 +49,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
                       ApiManager.getSource(widget.categories.id!);
                       setState(() {});
                     },
-                    child: Text('Try Again'))
+                    child: Text(AppLocalizations.of(context)!.try_again))
               ],
             );
           }
