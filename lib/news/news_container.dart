@@ -3,7 +3,7 @@ import 'package:news_project/api_manager.dart';
 import 'package:news_project/model/NewsResponse.dart';
 import 'package:news_project/model/SourceResponse.dart';
 import 'package:news_project/news/news_item.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 // last time was working here
 class NewsContainer extends StatefulWidget {
   Source source;
@@ -27,7 +27,7 @@ class _NewsContainerState extends State<NewsContainer> {
               setState(() {});
             },
             decoration: InputDecoration(
-              labelText: 'Search News',
+              labelText:  AppLocalizations.of(context)!.search_news,
               prefixIcon: Icon(Icons.search),
             ),
           ),
@@ -41,13 +41,13 @@ class _NewsContainerState extends State<NewsContainer> {
               } else if (snapshot.hasError) {
                 return Column(
                   children: [
-                    Text('Error'),
+                    Text(AppLocalizations.of(context)!.error),
                     ElevatedButton(
                       onPressed: () {
                         ApiManager.getNewsBySourceId(widget.source.id ?? '');
                         setState(() {});
                       },
-                      child: Text('Try Again'),
+                      child: Text(AppLocalizations.of(context)!.try_again),
                     )
                   ],
                 );
@@ -60,7 +60,7 @@ class _NewsContainerState extends State<NewsContainer> {
                         ApiManager.getNewsBySourceId(widget.source.id ?? '');
                         setState(() {});
                       },
-                      child: Text('Try Again'),
+                      child: Text(AppLocalizations.of(context)!.try_again),
                     )
                   ],
                 );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:news_project/news/news_item.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../api_manager.dart';
 import '../model/NewsResponse.dart';
 
@@ -19,7 +19,7 @@ class _SearchScreenState extends State<SearchScreen> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text(
-            'Search',
+            AppLocalizations.of(context)!.search_news,
             style: TextStyle(color: Colors.white, fontSize: 24),
           ),
           backgroundColor: Colors.green,
@@ -50,13 +50,13 @@ class _SearchScreenState extends State<SearchScreen> {
                 } else if (snapshot.hasError) {
                   return Column(
                     children: [
-                      Text('Error'),
+                      Text(AppLocalizations.of(context)!.error),
                       ElevatedButton(
                           onPressed: () {
                             ApiManager.getNewsByQuery(widget.query ?? '');
                             setState(() {});
                           },
-                          child: Text('Try Again'))
+                          child: Text(AppLocalizations.of(context)!.try_again))
                     ],
                   );
                 } else if (snapshot.data?.status != 'ok') {
@@ -68,7 +68,7 @@ class _SearchScreenState extends State<SearchScreen> {
                             ApiManager.getNewsByQuery(widget.query ?? '');
                             setState(() {});
                           },
-                          child: Text('Try Again'))
+                          child: Text(AppLocalizations.of(context)!.try_again))
                     ],
                   );
                 }

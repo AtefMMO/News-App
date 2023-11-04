@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HomeDrawer extends StatelessWidget {
 static const int settings=1;
 static const int categories=2;
@@ -18,7 +18,7 @@ static const int categories=2;
               child: Padding(
                 padding: const EdgeInsets.only(top: 70),
                 child: Text(
-                  'News App',
+                  AppLocalizations.of(context)!.news_App,
                   style: TextStyle(fontSize: 30, color: Colors.white),
                   textAlign: TextAlign.center,
                 ),
@@ -40,7 +40,7 @@ static const int categories=2;
                   size: 35,
                 ),
                 Text(
-                  'Categories',
+                  AppLocalizations.of(context)!.categories,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 )
               ],
@@ -61,7 +61,7 @@ static const int categories=2;
                   size: 35,
                 ),
                 Text(
-                  'Settings',
+                  AppLocalizations.of(context)!.settings,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 )
               ],

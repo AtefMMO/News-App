@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_project/category/category.dart';
 import 'package:news_project/category/category_item.dart';
 import 'package:news_project/home/search_screen.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'category_details.dart';
 
 class CategoryFragment extends StatefulWidget {
@@ -23,7 +23,7 @@ class _CategoryFragmentState extends State<CategoryFragment> {
       children: [
         Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Search For News...',style: TextStyle(fontSize: 20),),
+            Text(AppLocalizations.of(context)!.search_for_news,style: TextStyle(fontSize: 20),),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
@@ -35,11 +35,11 @@ class _CategoryFragmentState extends State<CategoryFragment> {
             ),
           ],
         ),
-        Text('OR',style: TextStyle(fontSize: 20),),
+        Text(AppLocalizations.of(context)!.or,style: TextStyle(fontSize: 20),),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            'Pick your category of interest',
+            AppLocalizations.of(context)!.pick_your_category_of_interest,
             style: TextStyle(fontSize: 20),
           ),
         ),

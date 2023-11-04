@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:news_project/model/NewsResponse.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NewsDetailsScreen extends StatelessWidget {
   static const String routeName = 'NewsDetailsScreen';
@@ -37,21 +37,23 @@ class NewsDetailsScreen extends StatelessWidget {
                   height: 20,
                 ),
                 Text(
-                  args.articles.author ?? 'Author',
+                  args.articles.author ?? AppLocalizations.of(context)!.author,
                   style: TextStyle(fontSize: 24),
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 Text(
-                  args.articles.content ?? 'Content',
+                  args.articles.content ??
+                      AppLocalizations.of(context)!.content,
                   style: TextStyle(fontSize: 20),
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 Text(
-                  args.articles.publishedAt ?? 'Date',
+                  args.articles.publishedAt ??
+                      AppLocalizations.of(context)!.date,
                   textAlign: TextAlign.end,
                 ),
                 SizedBox(
@@ -59,7 +61,7 @@ class NewsDetailsScreen extends StatelessWidget {
                 ),
                 InkWell(
                   child: Text(
-                    'For full article click here...',
+                    AppLocalizations.of(context)!.for_full_article,
                     style: TextStyle(color: Colors.blue, fontSize: 18),
                   ),
                   onTap: () async {
