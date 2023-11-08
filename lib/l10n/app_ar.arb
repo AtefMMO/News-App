@@ -1,0 +1,25 @@
+{
+  "categories": "التصنيفات",
+  "settings": "الاعدادات",
+  "news_App": "الاخبار",
+  "business": "تجارة",
+  "entertainment": "ترفيه",
+  "general": "عام",
+  "health": "صحة",
+  "science": "علوم",
+  "sports": "رياضة",
+  "technology": "تكنولوجيا",
+  "search_for_news": "البحث عن الاخبار...",
+  "or": "او",
+  "pick_your_category_of_interest": "اختار الاخبار التي تفضلها",
+  "search_news": "البحث عن الاخبار",
+  "english": "الانجليزية",
+  "arabic": "العربية",
+  "try_again": "حاول مره اخري",
+  "error": "حدث خطأ",
+  "author": "الناشر",
+  "content": "الخبر",
+  "date": "التاريخ",
+  "for_full_article": "للمزيد اضغط هنا..."
+
+}
