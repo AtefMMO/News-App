@@ -19,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           title: Text(selectedDrawerItem==HomeDrawer.settings? AppLocalizations.of(context)!.settings:
               selectedCategory == null ?  AppLocalizations.of(context)!.news_App : selectedCategory!.title!,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),

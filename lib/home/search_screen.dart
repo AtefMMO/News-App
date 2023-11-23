@@ -18,6 +18,7 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           title: Text(
             AppLocalizations.of(context)!.search_news,
             style: TextStyle(color: Colors.white, fontSize: 24),
