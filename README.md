@@ -31,7 +31,7 @@ A dynamic news app built with Flutter that allows users to stay informed by sele
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/news-app.git
+   git clone https://github.com/AtefMMO/News-App.git
 
 2. **Navigate to the project folder:**
 
