@@ -48,7 +48,7 @@ A dynamic news app built with Flutter that allows users to stay informed by sele
    ```bash
    flutter run
    
-##Usage
+## Usage
 
 **Select Categories**: Choose your preferred news categories from the app interface.
 
